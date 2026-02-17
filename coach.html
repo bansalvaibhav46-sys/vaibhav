@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COACH® | Handbags, Wallets, Clothing, Menswear, Shoes & More</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --coach-black: #000000;
+            --coach-white: #FFFFFF;
+            --coach-gray: #666666;
+            --coach-light-gray: #F5F5F5;
+            --coach-border: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--coach-black);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .top-banner {
+            background-color: var(--coach-black);
+            color: var(--coach-white);
+            text-align: center;
+            padding: 8px 0;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        header {
+            background-color: var(--coach-white);
+            border-bottom: 1px solid var(--coach-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-utility {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            font-size: 12px;
+            border-bottom: 1px solid var(--coach-border);
+        }
+
+        .header-utility-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-utility-right {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-utility a {
+            color: var(--coach-black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .header-utility a:hover {
+            opacity: 0.6;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 40px;
+            gap: 50px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--coach-black);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--coach-black);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 700px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4bc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--coach-gray);
+            letter-spacing: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: 2px solid var(--coach-black);
+            background-color: var(--coach-black);
+            color: var(--coach-white);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--coach-white);
+            color: var(--coach-black);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--coach-black);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--coach-black);
+            color: var(--coach-white);
+        }
+
+        /* Category Grid */
+        .category-section {
+            padding: 80px 40px;
+            background-color: var(--coach-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background-color: var(--coach-light-gray);
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .category-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--coach-white);
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .category-card a {
+            color: var(--coach-white);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--coach-white);
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .category-card a:hover {
+            opacity: 0.7;
+        }
+
+        /* Trending Section */
+        .trending-section {
+            padding: 80px 40px;
+            background-color: var(--coach-light-gray);
+        }
+
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 50px auto 0;
+        }
+
+        .trending-item {
+            background-color: var(--coach-white);
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .trending-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .trending-item-image {
+            height: 300px;
+            background-color: var(--coach-light-gray);
+            margin-bottom: 20px;
+        }
+
+        .trending-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .trending-item a {
+            color: var(--coach-black);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--coach-black);
+            padding-bottom: 2px;
+        }
+
+        /* Feature Banner */
+        .feature-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 600px;
+            background-color: var(--coach-black);
+            color: var(--coach-white);
+        }
+
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+
+        .feature-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .feature-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .feature-image {
+            background-color: var(--coach-gray);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 80px 40px;
+            background-color: #1a1a1a;
+            color: var(--coach-white);
+            text-align: center;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 1px solid #666;
+            background-color: transparent;
+            color: var(--coach-white);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+
+        /* Partnership Section */
+        .partnership-section {
+            padding: 80px 40px;
+            background-color: var(--coach-white);
+            text-align: center;
+        }
+
+        .partnership-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .partnership-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--coach-gray);
+        }
+
+        .partnership-image {
+            height: 500px;
+            background-color: var(--coach-light-gray);
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--coach-black);
+            color: var(--coach-white);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--coach-white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-content {
+                padding: 40px;
+            }
+
+            .feature-content h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        Free Shipping on Orders Over $150
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-utility">
+            <div class="header-utility-left">
+                <a href="#">United States</a>
+            </div>
+            <div class="header-utility-right">
+                <a href="#">Store Locator</a>
+                <a href="#">Wishlist</a>
+                <a href="#">My Account</a>
+                <a href="#">View Bag (0)</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="logo">COACH</a>
+            <ul class="nav-links">
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Gifts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Start fresh.</h1>
+            <p>With the new Chelsea bag by your side.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Shop Women's</a>
+                <a href="#" class="btn btn-secondary">Shop Bags</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Section -->
+    <section class="category-section">
+        <div class="section-header">
+            <h2>More ways to refresh your look.</h2>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-card-content">
+                    <h3>Shoulder Bags</h3>
+                    <a href="#">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-card-content">
+                    <h3>Bestsellers</h3>
+                    <a href="#">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-card-content">
+                    <h3>Tabby Collection</h3>
+                    <a href="#">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-card-content">
+                    <h3>Wallets</h3>
+                    <a href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="trending-section">
+        <div class="section-header">
+            <h2>Getting all the love.</h2>
+            <p>Trending and top-selling styles for spring.</p>
+        </div>
+        <div class="trending-grid">
+            <div class="trending-item">
+                <div class="trending-item-image"></div>
+                <h4>Chelsea Shoulder Bag</h4>
+                <a href="#">Shop Trending Now</a>
+            </div>
+            <div class="trending-item">
+                <div class="trending-item-image"></div>
+                <h4>Tabby Shoulder Bag</h4>
+                <a href="#">Shop New Arrivals</a>
+            </div>
+            <div class="trending-item">
+                <div class="trending-item-image"></div>
+                <h4>Brooklyn Carryall</h4>
+                <a href="#">Discover More</a>
+            </div>
+            <div class="trending-item">
+                <div class="trending-item-image"></div>
+                <h4>Mini Bags</h4>
+                <a href="#">View Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Banner -->
+    <section class="feature-banner">
+        <div class="feature-content">
+            <h2>Redefine style on and off the court.</h2>
+            <p>Discover our partnership with the WNBA and meet our latest ambassadors redefining what it means to be a champion.</p>
+            <a href="#" class="btn">Meet the Draftees</a>
+        </div>
+        <div class="feature-image"></div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <h2>Discover our new chapter.</h2>
+        <p>Sign up for emails and be the first to know about new arrivals, exclusive offers, and more.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section">
+        <h2>Introducing our newest ambassador: Omar Apollo.</h2>
+        <p>Explore the collection that embodies modern masculinity and timeless style.</p>
+        <div class="partnership-image"></div>
+        <a href="#" class="btn">Shop Men's</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Product Care</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Coach</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Coach (Re)Loved</a></li>
+                    <li><a href="#">Personalization</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Store Services</a></li>
+                    <li><a href="#">Coach Insider</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Coach IP Holdings LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
